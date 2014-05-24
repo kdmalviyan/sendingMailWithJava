@@ -57,7 +57,7 @@ public class SendMail {
 					prop.getProperty("smtp.mailTo")));
 			message.setSubject("Eail with Html content " + new Date());
 			message.setContent("<h1>This is actual message</h1>", "text/html");
-			Transport transport = session.getTransport("smtps");
+			Transport transport = session.getTransport("smtp");
 			transport.connect(prop.getProperty("mail.smtp.host"),
 					Integer.valueOf(prop.getProperty("mail.smtp.port")),
 					prop.getProperty("mail.smtp.user.username"),
@@ -90,7 +90,7 @@ public class SendMail {
 					prop.getProperty("smtp.mailTo")));
 			message.setSubject("Simple Email with text only. " + new Date());
 			message.setText("Hi this is simple testing mail.");
-			Transport transport = session.getTransport("smtps");
+			Transport transport = session.getTransport("smtp");
 			transport.connect(prop.getProperty("mail.smtp.host"),
 					Integer.valueOf(prop.getProperty("mail.smtp.port")),
 					prop.getProperty("mail.smtp.user.username"),
@@ -138,7 +138,7 @@ public class SendMail {
 			multipart.addBodyPart(messageBodyPart2);
 			message.setContent(multipart);
 
-			Transport transport = session.getTransport("smtps");
+			Transport transport = session.getTransport("smtp");
 			transport.connect(prop.getProperty("mail.smtp.host"),
 					Integer.valueOf(prop.getProperty("mail.smtp.port")),
 					prop.getProperty("mail.smtp.user.username"),

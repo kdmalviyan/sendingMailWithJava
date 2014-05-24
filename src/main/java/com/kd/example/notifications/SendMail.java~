@@ -54,7 +54,7 @@ public class SendMail {
 			message.setFrom(new InternetAddress(prop
 					.getProperty("mail.smtp.user")));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(
-					prop.getProperty("smtp.mailToList")));
+					prop.getProperty("smtp.mailTo")));
 			message.setSubject("Eail with Html content " + new Date());
 			message.setContent("<h1>This is actual message</h1>", "text/html");
 			Transport transport = session.getTransport("smtps");
@@ -87,7 +87,7 @@ public class SendMail {
 			message.setFrom(new InternetAddress(prop
 					.getProperty("mail.smtp.user")));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(
-					prop.getProperty("smtp.mailToList")));
+					prop.getProperty("smtp.mailTo")));
 			message.setSubject("Simple Email with text only. " + new Date());
 			message.setText("Hi this is simple testing mail.");
 			Transport transport = session.getTransport("smtps");
@@ -120,7 +120,7 @@ public class SendMail {
 			message.setFrom(new InternetAddress(prop
 					.getProperty("mail.smtp.user")));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(
-					prop.getProperty("smtp.mailToList")));
+					prop.getProperty("smtp.mailTo")));
 			message.setSubject("Email with attachment " + new Date());
 
 			BodyPart messageBodyPart1 = new MimeBodyPart();
